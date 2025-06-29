@@ -21,7 +21,8 @@ console.log(heading);
 
 // this is jsx, this is element creation using jsx
 const jsxHeading = <h1 id="heading"> This is jsx </h1>;
+console.log(jsxHeading);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-console.log(root);
+// console.log(root);
 root.render(heading);
