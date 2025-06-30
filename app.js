@@ -16,13 +16,31 @@ import ReactDOM from "react-dom/client";
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(parent); // here
 
-const heading = React.createElement("h2", { id: "heading" }, "hey hello"); // this is how we create element using react (which is an object).
-console.log(heading);
+// React Element
+const heading = React.createElement("h2", { id: "heading" }, "hey hello"); // * this is how we create element using react (which is an object).
 
 // this is jsx, this is element creation using jsx
-const jsxHeading = <h1 id="heading"> This is jsx </h1>;
-console.log(jsxHeading);
+// * React Element
+const jsxHeading = <h1 id="heading"> React using is jsx </h1>;
+
+// * React Component
+// * React Functional Component
+// * ways to write functional component
+
+// const HeadingComponent = () => <h1> This is functional component</h1>;
+
+// const HeadingComponent2 = () => {
+//   return <h1>This is functional component</h1>;
+// };
+
+const HeadingComponent3 = () => (
+  <div>
+    <h1 className="heading" id="root">
+      This is functional component
+    </h1>
+  </div>
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-// console.log(root);
-root.render(heading);
+
+root.render(<HeadingComponent3 />);
