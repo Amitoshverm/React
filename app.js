@@ -47,16 +47,20 @@ import ReactDOM from "react-dom/client";
 
 // root.render(<HeadingComponent3 />);
 
-const Content = () => (
-  <h2 id="subheading">this contains the subheading for the heading </h2>
-);
+const Content = <h2 id="subheading">this is our react element </h2>;
+
+const number = 100000;
 
 const HeadingComponent = () => (
   <div id="container">
-    <h1>This is heading</h1>
-    <Content />
+    {title}
+    {Content}
+    <h1>This is functional component</h1>
   </div>
 );
 
+const title = <h1>This is react element</h1>;
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<HeadingComponent />);
+// root.render(title);
