@@ -17,30 +17,46 @@ import ReactDOM from "react-dom/client";
 // root.render(parent); // here
 
 // React Element
-const heading = React.createElement("h2", { id: "heading" }, "hey hello"); // * this is how we create element using react (which is an object).
+// const heading = React.createElement("h2", { id: "heading" }, "hey hello"); // * this is how we create element using react (which is an object).
 
-// this is jsx, this is element creation using jsx
-// * React Element
-const jsxHeading = <h1 id="heading"> React using is jsx </h1>;
+// // this is jsx, this is element creation using jsx
+// // * React Element
+// const jsxHeading = <h1 id="heading"> React using is jsx </h1>;
 
-// * React Component
-// * React Functional Component
-// * ways to write functional component
+// // * React Component
+// // * React Functional Component
+// // * ways to write functional component
 
-// const HeadingComponent = () => <h1> This is functional component</h1>;
+// // const HeadingComponent = () => <h1> This is functional component</h1>;
 
-// const HeadingComponent2 = () => {
-//   return <h1>This is functional component</h1>;
+// const Title = () => {
+//   return <h1 id="title">This is the Title</h1>;
 // };
 
-const HeadingComponent3 = () => (
-  <div>
-    <h1 className="heading" id="root">
-      This is functional component
-    </h1>
+// // * this is component composition
+// const HeadingComponent3 = () => (
+//   <div>
+//     <Title />
+//     <h1 className="heading" id="root">
+//       This is functional component
+//     </h1>
+//   </div>
+// );
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// root.render(<HeadingComponent3 />);
+
+const Content = () => (
+  <h2 id="subheading">this contains the subheading for the heading </h2>
+);
+
+const HeadingComponent = () => (
+  <div id="container">
+    <h1>This is heading</h1>
+    <Content />
   </div>
 );
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<HeadingComponent3 />);
+root.render(<HeadingComponent />);
