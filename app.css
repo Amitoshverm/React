@@ -23,11 +23,11 @@ width: 100px;
     display: flex;
     flex-wrap: wrap;
 }
-.res-card {
+.res-card{
     margin: 5px;
     padding: 5px;
     width: 192px;
-    height: 393px;
+
     background-color: #f0f0f0;
 
 }
