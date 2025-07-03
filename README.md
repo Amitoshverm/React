@@ -47,3 +47,8 @@
 - When there are more components or things to export from a file then we use named exports
 - export const Component/variable;
 - improt { Component/variable } from "/path";
+
+# React Hooks
+(Normal javascript utility functions)  
+- useState() 
+- useEffect()
