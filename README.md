@@ -34,3 +34,16 @@
  *            Address
  *            Contact
  */
+
+# Export and Imports
+- There are two types of Exports -> Named exports and Default exports
+
+# default exports
+- There can only be one default export in a file
+- export default Component/variable;
+- import Component from "/path";
+
+# Named exports
+- When there are more components or things to export from a file then we use named exports
+- export const Component/variable;
+- improt { Component/variable } from "/path";
