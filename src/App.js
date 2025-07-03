@@ -1,42 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-/*
- *  Header - >
- *             Logo, nav Items(home, about, cart)
- *  Body ->
- *            search input,
- *            Restaurant container->
- *                                  restaurant card->
- *                                              image
- *                                              Name of restaruant, stars, cousines, eta
- *  Footer ->
- *            copyright
- *            links
- *            Address
- *            Contact
- */
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://cdn.vectorstock.com/i/500p/95/89/elegant-kitchen-logo-spatula-tie-vector-30219589.jpg"
-        />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
 const resList = [
   {
     info: {
@@ -659,44 +623,6 @@ const resList = [
     },
   },
 ];
-const RestaurantCard = (props) => {
-  const { resData } = props;
-
-  const { cloudinaryImageId, name, cuisines, costForTwo, avgRating, sla } =
-    resData?.info || null;
-  return (
-    <div className="res-card">
-      <div>
-        <img
-          alt="res-logo"
-          className="res-logo"
-          src={
-            "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-            cloudinaryImageId
-          }
-        />
-        <h4>{name}</h4>
-        <h5>{cuisines.join(", ")} </h5>
-        <h5>{costForTwo} </h5>
-        <h5>{avgRating} stars</h5>
-        <h5>{sla?.deliveryTime} minutes</h5>
-      </div>
-    </div>
-  );
-};
-
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="res-container">
-        {resList.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
 
 const AppComponent = () => {
   return (
