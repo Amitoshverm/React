@@ -52,3 +52,14 @@
 (Normal javascript utility functions)  
 - useState() 
 - useEffect()
+
+# useState()- its a special function in javascript that allows us to create a state variable in a functional component.
+  - const [stateVariable, setStateVariable] = useState(initialValue);
+
+# useEffect() - its a function in javascript, it is called when the whole component is rendered.
+    - useEffect(() => {
+        // code to run when component is rendered
+        return () => {
+            // code to run when component is unmounted
+        }
+        }, [dependencies]); // dependencies are the variables that the effect depends on, if they change then the effect will run again.
