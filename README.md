@@ -63,3 +63,19 @@
             // code to run when component is unmounted
         }
         }, [dependencies]); // dependencies are the variables that the effect depends on, if they change then the effect will run again.
+
+
+# Conditional Rendering
+- We can use conditional rendering to render different components based on a condition.
+- example : 
+if (listOfRestaurants.length === 0) {
+    return <h1>No Restaurants Found</h1>;
+} else {
+    return (
+        <div>
+            {listOfRestaurants.map((restaurant) => (
+                <RestaurantCard key={restaurant.id} {...restaurant} />
+            ))}
+        </div>
+    );
+}
