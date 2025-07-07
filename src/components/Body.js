@@ -42,11 +42,16 @@ const Body = () => {
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
-            }}></input>
+            }}
+          />
           <button
-            className="btn-search"
             onClick={() => {
-              listOfRestaurants.filter(resList);
+              // Filter the restaurant cards and update the ui
+              // search text
+              const filteredRestaurant = listOfRestaurants.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+              setListOfRestaurant(filteredRestaurant);
             }}>
             Search
           </button>
