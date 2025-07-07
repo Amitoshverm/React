@@ -6,6 +6,8 @@ import Shimmer from "./Shimmer";
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurant] = useState([]);
 
+  const [searchText, setSearchText] = useState("");
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -22,13 +24,33 @@ const Body = () => {
   };
 
   // conditional rendering: rendring on the basis of condition is called conditional rendering
-  if (listOfRestaurants?.length === 0) {
-    return <Shimmer />;
-  }
+  //   if (listOfRestaurants?.length === 0) {
+  //     return <Shimmer />;
+  //   }
 
-  return (
+  console.log("rendering");
+
+  return listOfRestaurants?.length === 0 ? (
+    <Shimmer />
+  ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            type="text"
+            className="search-box"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}></input>
+          <button
+            className="btn-search"
+            onClick={() => {
+              listOfRestaurants.filter(resList);
+            }}>
+            Search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {

@@ -68,14 +68,16 @@
 # Conditional Rendering
 - We can use conditional rendering to render different components based on a condition.
 - example : 
-if (listOfRestaurants.length === 0) {
-    return <h1>No Restaurants Found</h1>;
-} else {
-    return (
-        <div>
-            {listOfRestaurants.map((restaurant) => (
-                <RestaurantCard key={restaurant.id} {...restaurant} />
-            ))}
-        </div>
-    );
+-     if (listOfRestaurants.length === 0) {
+        return <h1>No Restaurants Found</h1>;
+            } else {
+            return (
+            <div>
+                {listOfRestaurants.map((restaurant) => (
+                    <RestaurantCard key={restaurant.id} {...restaurant} />
+                ))}
+            </div>
+        );
 }
+
+# REMEMBER THIS ALWAYS - Whenever we change the local state variable react re-reanders the component again.
