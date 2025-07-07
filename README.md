@@ -81,3 +81,8 @@
 }
 
 # REMEMBER THIS ALWAYS - Whenever we change the local state variable react re-reanders the component again.
+
+
+# How searching happens in the food app or any app where we use searching as a filter
+- We have a search input field where we type the search query. But when we type each letter the component re-renders and the search query is updated in the state variable. 
+- Conclusion - Whenever we type in the search input field, the component re-renders and the search query is updated in the state variable.
