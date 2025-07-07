@@ -21,7 +21,8 @@ const Body = () => {
     );
   };
 
-  if (listOfRestaurants.length === 0) {
+  // conditional rendering: rendring on the basis of condition is called conditional rendering
+  if (listOfRestaurants?.length === 0) {
     return <Shimmer />;
   }
 
@@ -40,9 +41,10 @@ const Body = () => {
         </button>
       </div>
       <div className="res-container">
-        {listOfRestaurants.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
-        ))}
+        {listOfRestaurants?.length > 0 &&
+          listOfRestaurants.map((restaurant) => (
+            <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          ))}
       </div>
     </div>
   );
