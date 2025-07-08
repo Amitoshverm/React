@@ -5,6 +5,7 @@ import Body from "./components/Body";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ErrorPage from "./components/ErrorPage";
 
 const AppComponent = () => {
   return (
@@ -19,14 +20,19 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppComponent />,
-  },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/contact",
-    element: <Contact />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/about",
+        element: <About />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+        errorElement: <ErrorPage />,
+      },
+    ],
   },
 ]);
 
