@@ -92,3 +92,7 @@
 - if dependency array is not passed then, the callback function inside useEffect will run after every render.
 - if dependency array is passed but it is empty([]) then, the callback function inside the useEffect will be called on intial render only.
 - if dependency array is passed with some variables then, the callback function inside the useEffect will be called on initial render and whenever any of the variables in the dependency array changes.
+
+# There are 2 types of routing 
+- Client side routing - the routing is done on the client side, the server does not know about the routing.
+- Server side routing - the routing is done on the server side, the server knows about the routing.
