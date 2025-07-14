@@ -55,6 +55,7 @@
 
 # useState()- its a special function in javascript that allows us to create a state variable in a functional component.
   - const [stateVariable, setStateVariable] = useState(initialValue);
+  - setStateVariable - is a # function that allows us to update the state variable.
 
 # useEffect() - its a function in javascript, it is called when the whole component is rendered.
     - useEffect(() => {
