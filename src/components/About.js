@@ -6,9 +6,17 @@ const About = () => {
       <h1>About </h1>
       <h2>This is about of learning Namaste React</h2>
 
-      <User name={"amitosh verma(function)"} />
+      <User
+        name={"amitosh verma(function)"}
+        contact={"amitoshverm(function)"}
+        location={"Ghaziabad(function)"}
+      />
 
-      <UserClass name={"amitosh verma(class)"} />
+      <UserClass
+        name={"amitosh verma(class)"}
+        contact={"amitosh(class)"}
+        location={"ghaziabad(class)"}
+      />
     </div>
   );
 };
