@@ -8,13 +8,13 @@ const About = () => {
 
       <User
         name={"amitosh verma(function)"}
-        contact={"amitoshverm(function)"}
+        contact={"@amitoshverm(function)"}
         location={"Ghaziabad(function)"}
       />
 
       <UserClass
         name={"amitosh verma(class)"}
-        contact={"amitosh(class)"}
+        contact={"@amitosh(class)"}
         location={"ghaziabad(class)"}
       />
     </div>
