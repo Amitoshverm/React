@@ -35,6 +35,7 @@ const RestaurantMenu = () => {
       <h1>{name}</h1>
       <p>{cuisines}</p>
       <p>{costForTwoMessage}</p>
+      <p>{avgRating} stars</p>
       <h2>Menu</h2>
       <ul>
         {itemCards.map((item) => (
