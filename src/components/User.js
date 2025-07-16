@@ -2,6 +2,14 @@ import { useState } from "react";
 const User = ({ name, location, contact }) => {
   const [count, setCount] = useState(0);
   const [count2, setCount2] = useState(2);
+
+  const fetchData = async () => {
+    const data = await fetch("https://api.github.com/users/Amitoshverm");
+
+    const jsonData = await data.json();
+    console.log(jsonData);
+  };
+
   return (
     <div className="user-card">
       <h1>Count: {count}</h1>

@@ -5,33 +5,34 @@ class UserClass extends React.Component {
     super(props);
 
     this.state = {
-      count: 0,
-      count2: 2,
+      userInfo: {
+        name: "",
+        location: "",
+        img: "",
+      },
     };
     console.log(this.props.name + " constructor called");
   }
-  componentDidMount() {
+  async componentDidMount() {
     console.log(this.props.name + " child Component did mount is called");
+    const data = await fetch("https://api.github.com/users/Amitoshverm");
+    const jsonData = await data.json();
+
+    console.log(jsonData);
+
+    this.setState({
+      userInfo: jsonData,
+    });
   }
   render() {
     console.log(this.props.name + " child render is called");
     // destructing the prop
-    const { name, location, contact } = this.props;
-    const { count, count2 } = this.state;
+    const { contact } = this.props;
+    const { name, location, avatar_url } = this.state.userInfo;
 
     return (
       <div className="user-card">
-        <h1>Count: {count}</h1>
-        <h1>Count2: {count2}</h1>
-        <button
-          onClick={() => {
-            this.setState({
-              count: this.state.count + 1,
-              count2: this.state.count2 + 1,
-            });
-          }}>
-          Count Increase
-        </button>
+        <img src={avatar_url} />
         <h2>Name: {name}</h2>
         <h3>Location: {location}</h3>
         <h3>Contact: {contact}</h3>
@@ -39,4 +40,12 @@ class UserClass extends React.Component {
     );
   }
 }
+
+/*   - const()
+    -  render()
+    dummy data is called 
+
+    - api is called 
+    
+ */
 export default UserClass;

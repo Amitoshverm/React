@@ -5,15 +5,15 @@ import UserClass from "./UserClass.js";
 class About extends React.Component {
   constructor(props) {
     super(props);
-    console.log("Parent constructor is called");
+    // console.log("Parent constructor is called");
   }
   // this is like useEffect which is used to make api call for lazy loading and componentDidMount() is called at the end
   // first constructor() is called then render() is called and in the end componentDidMount() is called.
   componentDidMount() {
-    console.log("Parent Component did mount is called");
+    // console.log("Parent Component did mount is called");
   }
   render() {
-    console.log("Parent render");
+    // console.log("Parent render");
     return (
       <div>
         <h1>About </h1>
@@ -21,11 +21,6 @@ class About extends React.Component {
 
         <UserClass
           name={"first"}
-          contact={"@amitosh(class)"}
-          location={"ghaziabad(class)"}
-        />
-        <UserClass
-          name={"second"}
           contact={"@amitosh(class)"}
           location={"ghaziabad(class)"}
         />

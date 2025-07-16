@@ -110,3 +110,7 @@
 - in componentDidMount() we can make API calls and update the state variable. 
 - it is used for lazy loading the data. 
 - remember : loads-> render-> api-> render
+
+
+
+![alt text](<Screenshot 2025-07-17 at 12.55.18 AM.png>)
