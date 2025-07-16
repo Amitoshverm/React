@@ -20,7 +20,12 @@ class About extends React.Component {
         <h2>This is about of learning Namaste React</h2>
 
         <UserClass
-          name={"amitosh verma(class)"}
+          name={"first"}
+          contact={"@amitosh(class)"}
+          location={"ghaziabad(class)"}
+        />
+        <UserClass
+          name={"second"}
           contact={"@amitosh(class)"}
           location={"ghaziabad(class)"}
         />
@@ -28,6 +33,22 @@ class About extends React.Component {
     );
   }
 }
+
+/**
+ * how will the life cyle of this method be called
+ *  - Parent constructor
+ *  - Parent Render
+ *      - first child const
+ *      - first child render
+ *
+ *      - second child const
+ *      - second child render
+ *
+ *      - first child componentDidMount()
+ *      - second child componentDidMount()
+ *
+ *  - Parents componentDidMount() callled
+ */
 
 // const About = () => {
 //   return (
