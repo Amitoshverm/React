@@ -101,7 +101,7 @@
 # Class Components
 - Class components are the old way of writing components in React.
 - They are not used anymore, but you should know about them.
-- cycle of calling 
+- lifecycle of these method calling 
   - constructor() - called when the component is created
   - render() - called when the component is rendered
   - componentDidMount() - called when the component is mounted
