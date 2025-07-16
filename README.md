@@ -97,3 +97,16 @@
 # There are 2 types of routing 
 - Client side routing - the routing is done on the client side, the server does not know about the routing.
 - Server side routing - the routing is done on the server side, the server knows about the routing.
+
+# Class Components
+- Class components are the old way of writing components in React.
+- They are not used anymore, but you should know about them.
+- cycle of calling 
+  - constructor() - called when the component is created
+  - render() - called when the component is rendered
+  - componentDidMount() - called when the component is mounted
+
+- componentDidMount() - is the equivalent of useEffect() with an empty dependency array. 
+- in componentDidMount() we can make API calls and update the state variable. 
+- it is used for lazy loading the data. 
+- remember : loads-> render-> api-> render
