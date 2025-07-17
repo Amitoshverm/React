@@ -104,6 +104,7 @@
 - The class component is created using `class` keyword and it extends `React.Component`.
 - Class components have a constructor() method which is called when the component is created.
 - Inside the constructor() we can initialize the state variable using `this.state = {}` and prop types using `this.props`.
+- Super() is called to initialize the parent class (React.Component) we put props inside super() to access them in the constructor.
 - Class component has a `render()` method which returns the jsx to be rendered.
 - lifecycle of these method calling 
   - constructor() - called when the component is created
