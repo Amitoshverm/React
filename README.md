@@ -102,6 +102,8 @@
 - Class components are the old way of writing components in React.
 - They are not used anymore, but you should know about them.
 - The class component is created using `class` keyword and it extends `React.Component`.
+- Class components have a constructor() method which is called when the component is created.
+- Inside the constructor() we can initialize the state variable using `this.state = {}` and prop types using `this.props`.
 - Class component has a `render()` method which returns the jsx to be rendered.
 - lifecycle of these method calling 
   - constructor() - called when the component is created
