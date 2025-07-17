@@ -101,16 +101,34 @@
 # Class Components
 - Class components are the old way of writing components in React.
 - They are not used anymore, but you should know about them.
+- The class component is created using `class` keyword and it extends `React.Component`.
+- Class component has a `render()` method which returns the jsx to be rendered.
 - lifecycle of these method calling 
   - constructor() - called when the component is created
   - render() - called when the component is rendered
   - componentDidMount() - called when the component is mounted
 
-- componentDidMount() - is the equivalent of useEffect() with an empty dependency array. 
+- componentDidMount() - is not equivalent to useEffect() its just shows relevence thats it, its completely different.
+  - useEffect() is called after the component is rendered, it can be used to make API calls, update the state, etc.
+  - componentDidMount() is called only once when the component is mounted, it is used to make API calls and update the state.
 - in componentDidMount() we can make API calls and update the state variable. 
 - it is used for lazy loading the data. 
 - remember : loads-> render-> api-> render
 
-
+# order of life cycle method calls in Class Based Components
+- Mounting ->
+-   constructor()
+-   render(some dummy data)
+-   componentDidMount() 
+-   API call
+-   setState() (this will re-render the component)
+- Update ->
+-   render() (with the API data)
+- Unmounting ->
+- componentWillUnmount() when we go do different page or component
 
 ![alt text](<Screenshot 2025-07-17 at 12.55.18 AM.png>)
+
+
+
+# Never compare react class component life cycle methods with normal functional components.
