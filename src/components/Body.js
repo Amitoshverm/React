@@ -29,9 +29,9 @@ const Body = () => {
   };
 
   // conditional rendering: rendring on the basis of condition is called conditional rendering
-  //   if (listOfRestaurants?.length === 0) {
-  //     return <Shimmer />;
-  //   }
+  // if (listOfRestaurants?.length === 0) {
+  //   return <Shimmer />;
+  // }
 
   console.log("rendering");
 
