@@ -41,11 +41,15 @@ class UserClass extends React.Component {
   }
 }
 
-/*   - const()
+/*  
+- Mounted -> 
+    - constructor()
     -  render()
-    dummy data is called 
-
+        dummy data is called 
+    - setState()
     - api is called 
-    
+
+- Update -> 
+    - render() with api data 
  */
 export default UserClass;
