@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -7,6 +7,25 @@ import Contact from "./components/Contact";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage";
 import RestaurantMenu from "./components/RestaurantMenu";
+
+/** what are we doing here:
+ * Is we are not loading the code for the grocery component in the start, I mean we won't be putting the code for
+ * Grocery component in our single bundle file which is given to us by parcel(bundler) that is present in dist folder
+ * *("dist/react.2c54e4d8.js") this is the file but we will create a seperate bundler file for our compoenet so it will
+ * solve the problem which is loading all the components at once which can lead big size of the file which would
+ * eventully lead to slow loading when opening the groceries rather we created a seperate bundled file.
+ *
+ * This process of making smaller bundles of this files is know as
+ * 1. Chunking
+ * 2. Code splitting
+ * 3. Dynamic Loading
+ * 4. On demand Loading
+ *
+ * If you go to dist folder you'll see we now have a grocery bundle
+ **/
+const Grocery = lazy(() => {
+  return import("./components/Grocery");
+});
 
 const AppComponent = () => {
   return (
@@ -31,6 +50,15 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/grocery",
+        element: (
+          <Suspense fallback={<h1>Have a Good day</h1>}>
+            <Grocery />
+          </Suspense>
+        ),
         errorElement: <ErrorPage />,
       },
       {
