@@ -135,3 +135,5 @@
 
 
 # Never compare react class component life cycle methods with normal functional components.
+
+# configured tailwind css
