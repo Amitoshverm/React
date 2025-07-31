@@ -71,12 +71,13 @@ const Body = () => {
         </div>
         <div className="search m-4 p-4 flex items-center">
           <button
-            className="px-4 py-1 bg-gray-200 m-2 rounded-lg"
+            className="px-4 py-1 bg-gray-200 m-2 rounded-lg cursor-pointer"
             onClick={() => {
               const filteredList = listOfRestaurants.filter(
-                (restaurant) => restaurant.info.avgRating >= 4.5
+                (restaurant) => restaurant.info.avgRating >= 4.4
               );
-              setListOfRestaurant(filteredList);
+              console.log("button clicked");
+              setListOfFilteredRestaurant(filteredList);
             }}>
             Top-Rated Restaurants
           </button>
