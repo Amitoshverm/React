@@ -19,22 +19,28 @@ const RestaurantMenu = () => {
   }
 
   return (
-    <div className="">
-      <div className="flex flex-wrap p-4 m-4 w-[600px] bg-gray-100 rounded-lg">
-        <h1 className="font-bold">{name}</h1>
-        <div className="flex">
-          <p className="font-bold">{cuisines}</p>
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <div className="bg-white rounded-lg shadow-lg p-6 w-3/4 md:w-1/2">
+        <h1 className="font-bold text-2xl mb-4 text-center">{name}</h1>
+        <div className="flex justify-center mb-2">
+          <p className="font-bold text-gray-600">{cuisines.join(", ")}</p>
         </div>
 
-        <p>{costForTwoMessage}</p>
-        <p>{avgRating} stars</p>
-        <h2>Menu</h2>
-        <ul>
+        <p className="text-gray-500 text-center mb-2">{costForTwoMessage}</p>
+        <p className="text-yellow-500 text-center mb-4">{avgRating} stars</p>
+        <h2 className="font-bold text-lg mb-4 text-center">Menu</h2>
+        <ul className="space-y-2">
           {itemCards.map((item) => (
-            <p key={item.card.info.id}>
-              {item.card.info.name} - Rs.
-              {item.card.info.price / 100 || item.card.info.defaultPrice / 100}
-            </p>
+            <li
+              key={item.card.info.id}
+              className="flex justify-between items-center border-b pb-2">
+              <span className="text-gray-700">{item.card.info.name}</span>
+              <span className="text-gray-500">
+                Rs.{" "}
+                {item.card.info.price / 100 ||
+                  item.card.info.defaultPrice / 100}
+              </span>
+            </li>
           ))}
         </ul>
       </div>
