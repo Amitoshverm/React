@@ -19,7 +19,7 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6917326&lng=77.4933586&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    console.log(json);
+    // console.log(json);
 
     setListOfRestaurant(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
@@ -46,17 +46,18 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-      <div className="filter">
-        <div className="search">
+      <div className="filter flex">
+        <div className="search m-4 p-4">
           <input
             type="text"
-            className="search-box"
+            className="border border-solid border-black"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
+            className="px-4 py-1 bg-green-100 m-2 rounded-lg"
             onClick={() => {
               // Filter the restaurant cards and update the ui
               // search text
@@ -68,18 +69,21 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filteredList = listOfRestaurants.filter(
-              (restaurant) => restaurant.info.avgRating >= 4
-            );
-            setListOfRestaurant(filteredList);
-          }}>
-          Top-Rated Restaurants
-        </button>
+        <div className="search m-4 p-4 flex items-center">
+          <button
+            className="px-4 py-1 bg-gray-200 m-2 rounded-lg cursor-pointer"
+            onClick={() => {
+              const filteredList = listOfRestaurants.filter(
+                (restaurant) => restaurant.info.avgRating >= 4.4
+              );
+              console.log("button clicked");
+              setListOfFilteredRestaurant(filteredList);
+            }}>
+            Top-Rated Restaurants
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {listOffilteredRestaurant?.length > 0 &&
           listOffilteredRestaurant.map((restaurant) => (
             <Link
