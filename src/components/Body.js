@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLable } from "./RestaurantCard";
 import resList from "../utils/mockdata";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
@@ -10,6 +10,7 @@ const Body = () => {
   const [listOffilteredRestaurant, setListOfFilteredRestaurant] = useState([]);
 
   const [searchText, setSearchText] = useState("");
+  const PromotedRestaurantCard = withPromotedLable(RestaurantCard);
 
   useEffect(() => {
     fetchData();
@@ -89,7 +90,11 @@ const Body = () => {
             <Link
               key={restaurant.info.id}
               to={"/restaurants/" + restaurant.info.id}>
-              <RestaurantCard resData={restaurant} />
+              {restaurant.info.promoted ? (
+                <PromotedRestaurantCard resData={restaurant} />
+              ) : (
+                <RestaurantCard resData={restaurant} />
+              )}
             </Link>
           ))}
       </div>
