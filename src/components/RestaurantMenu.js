@@ -27,10 +27,10 @@ const RestaurantMenu = () => {
   }
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="bg-white rounded-lg shadow-lg p-6 w-3/4 md:w-1/2">
-        <h1 className="font-bold text-2xl mb-4 text-center">{name}</h1>
-        <p className="text-gray-500 text-center mb-2">{costForTwoMessage}</p>
+    <div className="">
+      <div className="">
+        <h1 className="">{name}</h1>
+        <p className="">{costForTwoMessage}</p>
 
         {/* categories accordion */}
         {categories.map((category) => (
