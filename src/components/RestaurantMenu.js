@@ -34,7 +34,10 @@ const RestaurantMenu = () => {
 
         {/* categories accordion */}
         {categories.map((category) => (
-          <RestaurantCategory data={category?.card?.card} />
+          <RestaurantCategory
+            key={category?.card?.card?.name}
+            data={category?.card?.card}
+          />
         ))}
 
         {/* <div className="flex justify-center mb-2">
