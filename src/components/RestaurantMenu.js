@@ -20,22 +20,22 @@ const RestaurantMenu = () => {
         c.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
-  // console.log(categories);
+  console.log(categories);
 
   if (resData === null) {
     return <p>Loading...</p>;
   }
 
   return (
-    <div className="">
-      <div className="">
-        <h1 className="">{name}</h1>
-        <p className="">{costForTwoMessage}</p>
+    <div>
+      <div>
+        <h1>{name}</h1>
+        <p>{costForTwoMessage}</p>
 
         {/* categories accordion */}
         {categories.map((category) => (
           <RestaurantCategory
-            key={category?.card?.card?.name}
+            key={category?.card?.card?.title}
             data={category?.card?.card}
           />
         ))}
