@@ -41,7 +41,7 @@ const Body = () => {
     return <h1>No Internet !!</h1>;
   }
 
-  console.log("rendering");
+  // console.log("rendering");
 
   return listOfRestaurants?.length === 0 ? (
     <Shimmer />

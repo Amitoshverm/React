@@ -9,11 +9,8 @@ class About extends React.Component {
   }
   // this is like useEffect which is used to make api call for lazy loading and componentDidMount() is called at the end
   // first constructor() is called then render() is called and in the end componentDidMount() is called.
-  componentDidMount() {
-    // console.log("Parent Component did mount is called");
-  }
+  componentDidMount() {}
   render() {
-    // console.log("Parent render");
     return (
       <div>
         <h1>About </h1>
