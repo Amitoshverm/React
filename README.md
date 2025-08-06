@@ -137,3 +137,6 @@
 # Never compare react class component life cycle methods with normal functional components.
 
 # configured tailwind css
+
+# Higer Order Component 
+- its a function which takes a function/Component as arg/input and returns a new component(which is function only)
