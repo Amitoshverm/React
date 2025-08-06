@@ -35,13 +35,14 @@ const AppComponent = () => {
     setUserName(user);
   }, []);
   return (
-    <div className="app">
-      <UserContext.Provider value={{ loggedInUser: userName }}>
+    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+      <div className="app">
         <Header />
-      </UserContext.Provider>
-      {/* <Body /> */}
-      <Outlet />
-    </div>
+
+        {/* <Body /> */}
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
 
